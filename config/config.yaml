@@ -1,0 +1,52 @@
+# AutoClash-Edu configuration
+# Adjust these to match your emulator / device setup.
+
+device:
+  # ADB serial, e.g. "127.0.0.1:5555" for most Android emulators (MEmu, LDPlayer, Nox, BlueStacks with adb enabled)
+  # Run `adb devices` yourself first to confirm this string.
+  # serial: "127.0.0.1:5554"
+  serial: "emulator-5554"
+  # Path to adb.exe. Leave as "adb" if adb is on your system PATH.
+  # If using the bundled adb (recommended, see tools/adb/README.md), point
+  # this at the full path, e.g. on Windows:
+  #   adb_path: "tools/adb/adb.exe"
+  adb_path: "tools/adb/adb.exe"
+  # Resolution the templates were captured at. If your emulator uses a different
+  # resolution, screenshots are resized to this before template matching.
+  reference_width: 1280
+  reference_height: 720
+
+emulator:
+  type: "ldplayer"
+  install_path: "C:\\LDPlayer\\LDPlayer14"
+  instance_index: 0
+
+timing:
+  loop_delay_seconds: 2.0        # pause between each perception-action cycle
+  min_action_delay: 0.8          # randomized delay range before/after taps,
+  max_action_delay: 2.2           # to avoid perfectly regular bot-like timing
+  attack_search_timeout: 15       # seconds to look for a valid attack target
+
+vision:
+  match_threshold: 0.82          # min confidence (0-1) for template matches
+  template_dir: "templates"       # see templates/README.md for what's required
+
+ocr:
+  tesseract_cmd: null              # null = use system PATH, or give an absolute path
+  digits_only_whitelist: "0123456789/,"
+
+behavior:
+  loop:
+    - collect      # tap resource mines/collectors
+    - donate       # fulfill clan-castle troop requests
+    - train        # queue troops in the barracks/army camp if under capacity
+    - attack       # search + run an attack, then return home
+  max_cycles: null   # null = run forever, or set an integer for testing
+
+logging:
+  log_dir: "logs"
+  level: "INFO"
+  save_debug_screenshots: true
+
+game:
+  package: "com.supercell.clashofclans"

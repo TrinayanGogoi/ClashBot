@@ -1,0 +1,6 @@
+opencv-python>=4.9.0
+pytesseract>=0.3.10
+Pillow>=10.0.0
+numpy>=1.26.0
+PyYAML>=6.0
+adb-shell[usb]>=0.4.4
