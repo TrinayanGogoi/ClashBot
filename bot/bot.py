@@ -1,5 +1,5 @@
 from modules.emulator import LDPlayer
-
+from modules.adb import ADB
 
 class Bot:
     """
@@ -21,9 +21,11 @@ class Bot:
         self.logger = logger
 
         self.emulator = LDPlayer()
+        self.adb = ADB()    
 
         # Give the emulator access to the same logger
         self.emulator.logger = logger
+        self.adb.logger = logger
 
     def log(self, message):
         """
@@ -55,3 +57,7 @@ class Bot:
         self.emulator.launch_app()
 
         self.log("Bot started successfully.")
+    
+    def capture_screenshot(self):
+
+        self.adb.screenshot(save=True)

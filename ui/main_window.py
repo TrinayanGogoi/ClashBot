@@ -1,4 +1,5 @@
 import traceback
+from functools import partial
 
 from PySide6.QtCore import Qt, QThread, Signal
 from PySide6.QtWidgets import (
@@ -12,21 +13,30 @@ from PySide6.QtWidgets import (
 from bot.bot import Bot
 
 
-class BotWorker(QThread):
-    finished = Signal()
+class Worker(QThread):
+    """
+    Generic worker that can execute any Bot task.
+    """
+
+    # finished = Signal()
     error = Signal(str)
     log = Signal(str)
 
+    def __init__(self, bot, task_name):
+        super().__init__()
+        self.bot = bot
+        self.task_name = task_name
+
     def run(self):
         try:
-            bot = Bot(logger=self.log.emit)
-
-            bot.start()
-
-            self.finished.emit()
+            task = getattr(self.bot, self.task_name)
+            task()
+            # print(">>> Worker emitting finished")
+            # self.finished.emit()
 
         except Exception:
             self.error.emit(traceback.format_exc())
+
 
 class MainWindow(QWidget):
 
@@ -34,60 +44,141 @@ class MainWindow(QWidget):
         super().__init__()
 
         self.setWindowTitle("ClashBot Edu")
-
         self.resize(700, 500)
+
+        self.worker = None
+
+        self.bot = Bot(logger=self.log)
+
+        # ------------------------
+        # Widgets
+        # ------------------------
 
         self.status = QLabel("Status: Idle")
         self.status.setAlignment(Qt.AlignCenter)
 
-        self.start_button = QPushButton("Start Bot")
+        self.start_button = QPushButton("▶ Start Bot")
+        self.bot_running = False
+        self.screenshot_button = QPushButton("Capture Screenshot")
 
         self.log_box = QTextEdit()
         self.log_box.setReadOnly(True)
 
-        layout = QVBoxLayout()
+        # ------------------------
+        # Layout
+        # ------------------------
 
+        layout = QVBoxLayout()
         layout.addWidget(self.status)
         layout.addWidget(self.start_button)
+        layout.addWidget(self.screenshot_button)
         layout.addWidget(self.log_box)
 
         self.setLayout(layout)
 
-        self.worker = None
+        # ------------------------
+        # Signals
+        # ------------------------
 
-        self.start_button.clicked.connect(self.start_bot)
+        self.start_button.clicked.connect(self.toggle_bot)
+        self.screenshot_button.clicked.connect(self.capture_screenshot)
 
         self.log("Application started.")
+
+    # ==========================================================
+    # Logging
+    # ==========================================================
 
     def log(self, text):
         self.log_box.append(text)
 
+    # ==========================================================
+    # Generic task runner
+    # ==========================================================
+
+    def run_task(self, task_name):
+        worker = Worker(
+            self.bot,
+            task_name,
+        )
+        worker.error.connect(self.bot_error)
+        worker.finished.connect(
+            partial(
+                self.task_finished,
+                worker,
+            )
+        )
+        self.worker = worker
+        worker.start()
+
+    # ==========================================================
+    # Button handlers
+    # ==========================================================
+
     def start_bot(self):
 
         self.start_button.setEnabled(False)
+        self.start_button.setText("Starting...")
 
         self.status.setText("Status: Starting...")
 
-        self.worker = BotWorker()
+        self.run_task("start")
 
-        self.worker.log.connect(self.log)
+    def toggle_bot(self):
 
-        self.worker.finished.connect(self.bot_started)
+        if self.bot_running:
+            self.stop_bot()
+        else:
+            self.start_bot()
 
-        self.worker.error.connect(self.bot_error)
+    def capture_screenshot(self):
 
-        self.worker.start()
+        self.screenshot_button.setEnabled(False)
 
-    def bot_started(self):
+        self.run_task("capture_screenshot")
+
+    # ==========================================================
+    # Worker callbacks  # print(">>> task_finished called")
+    # ==========================================================
+
+    def task_finished(self, worker):
 
         self.status.setText("Status: Running")
+        # print(">>> task_finished called")
+        self.bot_running = True
 
-        # self.log("Bot started successfully.")
+        self.start_button.setEnabled(True)
+        self.start_button.setText("■ Stop Bot")
+
+        self.screenshot_button.setEnabled(True)
+
+        self.log("Task completed.")
+
+        worker.deleteLater()
+
+        if self.worker is worker:
+            self.worker = None
+
+
+    def stop_bot(self):
+
+        self.bot_running = False
+
+        self.status.setText("Status: Stopped")
+
+        self.start_button.setText("▶ Start Bot")
+
+        self.log("Bot stopped.")
 
     def bot_error(self, message):
+
+        self.start_button.setEnabled(True)
+        self.screenshot_button.setEnabled(True)
 
         self.status.setText("Status: Error")
 
         self.log(message)
 
-        self.start_button.setEnabled(True)
+        if self.worker:
+            self.worker.deleteLater()
+            self.worker = None
