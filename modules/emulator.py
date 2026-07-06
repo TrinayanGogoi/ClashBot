@@ -23,9 +23,14 @@ class LDPlayer:
 
         self.config = config
 
+        self.logger = None
+
         # Device
         self.serial = config["device"]["serial"]
         self.adb = config["device"]["adb_path"]
+
+        # Game
+        self.game_package = config["game"]["package"]
 
         # Emulator
         emulator = config["emulator"]
@@ -43,6 +48,10 @@ class LDPlayer:
             raise FileNotFoundError(
                 f"Cannot find LDConsole:\n{self.ldconsole}"
             )
+        
+    def log(self, message):
+        if self.logger:
+            self.logger(message)
 
     def _run(self, command):
         """
@@ -86,10 +95,10 @@ class LDPlayer:
         """
 
         if self.is_running():
-            print(f"Emulator already running ({self.serial})")
+            self.log(f"Emulator already running ({self.serial})")
             return
 
-        print(f"Starting LDPlayer instance {self.instance_index}...")
+        self.log(f"Starting LDPlayer instance {self.instance_index}...")
 
         self._run(
             [
@@ -105,7 +114,7 @@ class LDPlayer:
         Wait until ADB detects the emulator.
         """
 
-        print("Waiting for emulator...")
+        self.log("Waiting for emulator...")
 
         start = time.time()
 
@@ -122,7 +131,7 @@ class LDPlayer:
                     ]
                 )
 
-                print(f"Connected to {self.serial}")
+                self.log(f"Connected to {self.serial}")
 
                 return self.serial
 
@@ -140,7 +149,7 @@ class LDPlayer:
         if serial is None:
             serial = self.serial
 
-        print("Waiting for Android boot...")
+        self.log("Waiting for Android boot...")
 
         while True:
 
@@ -160,7 +169,7 @@ class LDPlayer:
 
             time.sleep(2)
 
-        print("Android boot completed.")
+        self.log("Android boot completed.")
 
     def resolve_activity(self, package_name, serial=None):
         """
@@ -207,18 +216,20 @@ class LDPlayer:
 
         return activity
 
-    def launch_app(self, package_name, serial=None):
+    def launch_app(self, package_name=None, serial=None):
         """
         Launch any installed Android app.
         """
+        if package_name is None:
+            package_name = self.game_package
 
         if serial is None:
             serial = self.serial
 
         activity = self.resolve_activity(package_name, serial)
 
-        print(f"Launching {package_name}...")
-        print(f"Resolved activity: {activity}")
+        self.log(f"Launching {package_name}...")
+        self.log(f"Resolved activity: {activity}")
 
         result = self._run(
             [
@@ -238,4 +249,6 @@ class LDPlayer:
                 f"Failed to launch app:\n{result.stderr}"
             )
 
-        print("App launched successfully.")
+        self.log("App launched successfully.")
+
+        
