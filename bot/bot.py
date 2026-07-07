@@ -79,6 +79,4 @@ class Bot:
     def zoom_out(self):
         self.u2.zoom_out()
 
-    def manual_pinch(self):
-        self.u2.manual_pinch()
 

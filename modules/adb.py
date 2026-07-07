@@ -67,20 +67,6 @@ class ADB:
     # Shell
     # ---------------------------------------------------------
 
-    # def shell(self, *command):
-
-    #     result = self._run(
-    #         [
-    #             self.adb,
-    #             "-s",
-    #             self.serial,
-    #             "shell",
-    #             *command,
-    #         ]
-    #     )
-
-    #     return result
-
     def shell(self, *args):
         """
         Execute an ADB shell command.
