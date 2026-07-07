@@ -70,3 +70,12 @@ class Bot:
     def device_info(self):
         self.u2.device_info()
 
+    # def available_methods(self):
+    #     self.u2.available_methods()
+
+    # def dump_hierarchy(self):
+    #     self.u2.dump_hierarchy()
+
+    def zoom_out(self):
+        self.u2.zoom_out()
+

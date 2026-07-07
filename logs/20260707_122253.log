@@ -1,0 +1,16 @@
+[12:22:53] Application started.
+[12:23:06] Starting emulator...
+[12:23:06] Emulator already running (emulator-5554)
+[12:23:06] Waiting for emulator...
+[12:23:06] Connected to emulator-5554
+[12:23:06] Waiting for Android boot...
+[12:23:07] Android boot completed.
+[12:23:07] Connecting to UIAutomator2...
+[12:23:08] UIAutomator2 connected.
+[12:23:08] Launching com.supercell.clashofclans...
+[12:23:08] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[12:23:08] App launched successfully.
+[12:23:08] Bot started successfully.
+[12:23:08] Task completed.
+[12:23:28] UI hierarchy saved to hierarchy.xml
+[12:23:28] Task completed.

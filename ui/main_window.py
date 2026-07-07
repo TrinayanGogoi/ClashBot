@@ -23,15 +23,22 @@ class Worker(QThread):
     error = Signal(str)
     log = Signal(str)
 
-    def __init__(self, bot, task_name):
+    def __init__(self, bot, task_name, *args, **kwargs):
         super().__init__()
+
         self.bot = bot
         self.task_name = task_name
+
+        self.args = args
+        self.kwargs = kwargs
 
     def run(self):
         try:
             task = getattr(self.bot, self.task_name)
-            task()
+            task(
+                *self.args,
+                **self.kwargs,
+            )
             # print(">>> Worker emitting finished")
             # self.finished.emit()
 
@@ -88,7 +95,7 @@ class MainWindow(QWidget):
 
         self.start_button.clicked.connect(self.toggle_bot) # not using Lambda here because we want to toggle the bot state
         self.screenshot_button.clicked.connect(self.capture_screenshot) # not using Lambda here because we want to capture a screenshot
-        self.zoom_button.clicked.connect(lambda: self.run_task("device_info"))
+        self.zoom_button.clicked.connect(lambda: self.run_task("zoom_out"))
         self.logger.log("Application started.")
 
     # ==========================================================
@@ -102,10 +109,12 @@ class MainWindow(QWidget):
     # Generic task runner
     # ==========================================================
 
-    def run_task(self, task_name):
+    def run_task(self,task_name,*args, **kwargs,):
         worker = Worker(
             self.bot,
             task_name,
+            *args,
+            **kwargs,
         )
         worker.error.connect(self.bot_error)
         worker.finished.connect(
