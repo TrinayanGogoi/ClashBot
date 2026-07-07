@@ -1,0 +1,26 @@
+[09:52:31] Application started.
+[09:52:35] Starting emulator...
+[09:52:35] Starting LDPlayer instance 0...
+[09:52:35] Waiting for emulator...
+[09:53:12] Connected to emulator-5554
+[09:53:12] Waiting for Android boot...
+[09:53:12] Android boot completed.
+[09:53:12] Launching com.supercell.clashofclans...
+[09:53:12] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[09:53:12] App launched successfully.
+[09:53:12] Bot started successfully.
+[09:53:12] Task completed.
+[09:54:48] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 33, in run
+    task = getattr(self.bot, self.task_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'zoom_out'
+
+[09:54:48] Task completed.
+[09:54:55] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 33, in run
+    task = getattr(self.bot, self.task_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'zoom_out'
+
+[09:54:55] Task completed.

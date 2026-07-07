@@ -13,8 +13,8 @@ device:
   adb_path: "tools/adb/adb.exe"
   # Resolution the templates were captured at. If your emulator uses a different
   # resolution, screenshots are resized to this before template matching.
-  reference_width: 1280
-  reference_height: 720
+  reference_width: 1600
+  reference_height: 900
 
 emulator:
   type: "ldplayer"

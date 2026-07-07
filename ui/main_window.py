@@ -1,5 +1,6 @@
 import traceback
 from functools import partial
+from modules.logger import Logger
 
 from PySide6.QtCore import Qt, QThread, Signal
 from PySide6.QtWidgets import (
@@ -48,7 +49,9 @@ class MainWindow(QWidget):
 
         self.worker = None
 
-        self.bot = Bot(logger=self.log)
+        self.logger = Logger(gui_callback=self.log)
+
+        self.bot = Bot(logger=self.logger.log)
 
         # ------------------------
         # Widgets
@@ -58,8 +61,10 @@ class MainWindow(QWidget):
         self.status.setAlignment(Qt.AlignCenter)
 
         self.start_button = QPushButton("▶ Start Bot")
-        self.bot_running = False
         self.screenshot_button = QPushButton("Capture Screenshot")
+        self.zoom_button = QPushButton("Zoom Out")
+
+        self.bot_running = False
 
         self.log_box = QTextEdit()
         self.log_box.setReadOnly(True)
@@ -72,6 +77,7 @@ class MainWindow(QWidget):
         layout.addWidget(self.status)
         layout.addWidget(self.start_button)
         layout.addWidget(self.screenshot_button)
+        layout.addWidget(self.zoom_button)
         layout.addWidget(self.log_box)
 
         self.setLayout(layout)
@@ -80,10 +86,10 @@ class MainWindow(QWidget):
         # Signals
         # ------------------------
 
-        self.start_button.clicked.connect(self.toggle_bot)
-        self.screenshot_button.clicked.connect(self.capture_screenshot)
-
-        self.log("Application started.")
+        self.start_button.clicked.connect(self.toggle_bot) # not using Lambda here because we want to toggle the bot state
+        self.screenshot_button.clicked.connect(self.capture_screenshot) # not using Lambda here because we want to capture a screenshot
+        self.zoom_button.clicked.connect(lambda: self.run_task("device_info"))
+        self.logger.log("Application started.")
 
     # ==========================================================
     # Logging
@@ -152,7 +158,7 @@ class MainWindow(QWidget):
 
         self.screenshot_button.setEnabled(True)
 
-        self.log("Task completed.")
+        self.logger.log("Task completed.")
 
         worker.deleteLater()
 
@@ -168,7 +174,7 @@ class MainWindow(QWidget):
 
         self.start_button.setText("▶ Start Bot")
 
-        self.log("Bot stopped.")
+        self.logger.log("Bot stopped.")
 
     def bot_error(self, message):
 
@@ -177,7 +183,7 @@ class MainWindow(QWidget):
 
         self.status.setText("Status: Error")
 
-        self.log(message)
+        self.logger.log(message)
 
         if self.worker:
             self.worker.deleteLater()

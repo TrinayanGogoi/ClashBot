@@ -67,19 +67,39 @@ class ADB:
     # Shell
     # ---------------------------------------------------------
 
-    def shell(self, *command):
+    # def shell(self, *command):
 
-        result = self._run(
-            [
-                self.adb,
-                "-s",
-                self.serial,
-                "shell",
-                *command,
-            ]
-        )
+    #     result = self._run(
+    #         [
+    #             self.adb,
+    #             "-s",
+    #             self.serial,
+    #             "shell",
+    #             *command,
+    #         ]
+    #     )
 
-        return result
+    #     return result
+
+    def shell(self, *args):
+        """
+        Execute an ADB shell command.
+
+        Example:
+            self.shell("input", "keyevent", "3")
+            self.shell("input", "tap", "500", "300")
+        """
+
+        command = [
+            self.adb,
+            "-s",
+            self.serial,
+            "shell",
+        ]
+
+        command.extend(map(str, args))
+
+        return self._run(command)
 
     # ---------------------------------------------------------
     # Screenshot
@@ -190,3 +210,29 @@ class ADB:
 
         # Small delay after the tap
         time.sleep(random.uniform(*delay_after))
+
+    # ---------------------------------------------------------
+    # Swipe
+    # ---------------------------------------------------------
+
+
+    def swipe(self, x1, y1, x2, y2, duration=300):
+        """
+        Perform a swipe gesture.
+        """
+
+        if self.logger:
+            self.logger(
+                f"Swipe ({x1}, {y1}) -> ({x2}, {y2})"
+            )
+
+        self.shell(
+            "input",
+            "swipe",
+            x1,
+            y1,
+            x2,
+            y2,
+            duration,
+        )
+

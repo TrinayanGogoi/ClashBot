@@ -1,5 +1,6 @@
 from modules.emulator import LDPlayer
 from modules.adb import ADB
+from modules.uiautomator import UIAutomator
 
 class Bot:
     """
@@ -22,9 +23,12 @@ class Bot:
 
         self.emulator = LDPlayer()
         self.adb = ADB()    
+        self.u2 = UIAutomator()
 
+        
         # Give the emulator access to the same logger
         self.emulator.logger = logger
+        self.u2.logger = logger
         self.adb.logger = logger
 
     def log(self, message):
@@ -51,6 +55,7 @@ class Bot:
         # self.log("Waiting for Android boot...")
 
         self.emulator.wait_for_boot()
+        self.u2.connect()
 
         # self.log("Launching Clash of Clans...")
 
@@ -61,3 +66,7 @@ class Bot:
     def capture_screenshot(self):
 
         self.adb.screenshot(save=True)
+    
+    def device_info(self):
+        self.u2.device_info()
+

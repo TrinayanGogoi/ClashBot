@@ -1,0 +1,21 @@
+[11:13:50] Application started.
+[11:13:52] Starting emulator...
+[11:13:52] Emulator already running (emulator-5554)
+[11:13:52] Waiting for emulator...
+[11:13:52] Connected to emulator-5554
+[11:13:52] Waiting for Android boot...
+[11:13:52] Android boot completed.
+[11:13:52] Connecting to UIAutomator2...
+[11:13:53] UIAutomator2 connected.
+[11:13:54] Launching com.supercell.clashofclans...
+[11:13:54] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[11:13:54] App launched successfully.
+[11:13:54] Bot started successfully.
+[11:13:54] Task completed.
+[11:13:58] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 33, in run
+    task = getattr(self.bot, self.task_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'device_info'
+
+[11:13:58] Task completed.

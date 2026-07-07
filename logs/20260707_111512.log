@@ -1,0 +1,16 @@
+[11:15:12] Application started.
+[11:15:14] Starting emulator...
+[11:15:14] Emulator already running (emulator-5554)
+[11:15:14] Waiting for emulator...
+[11:15:14] Connected to emulator-5554
+[11:15:14] Waiting for Android boot...
+[11:15:14] Android boot completed.
+[11:15:14] Connecting to UIAutomator2...
+[11:15:15] UIAutomator2 connected.
+[11:15:15] Launching com.supercell.clashofclans...
+[11:15:15] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[11:15:15] App launched successfully.
+[11:15:15] Bot started successfully.
+[11:15:15] Task completed.
+[11:15:16] Device info: {'currentPackageName': 'com.supercell.clashofclans', 'displayHeight': 900, 'displayRotation': 0, 'displaySizeDpX': 1067, 'displaySizeDpY': 600, 'displayWidth': 1600, 'productName': 'G576D', 'screenOn': True, 'sdkInt': 34, 'naturalOrientation': True}
+[11:15:16] Task completed.
