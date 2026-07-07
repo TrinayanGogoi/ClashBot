@@ -1,0 +1,45 @@
+[13:16:19] Application started.
+[13:16:21] Starting emulator...
+[13:16:21] Emulator already running (emulator-5554)
+[13:16:21] Waiting for emulator...
+[13:16:21] Connected to emulator-5554
+[13:16:21] Waiting for Android boot...
+[13:16:21] Android boot completed.
+[13:16:21] Connecting to UIAutomator2...
+[13:16:22] UIAutomator2 connected.
+[13:16:22] Launching com.supercell.clashofclans...
+[13:16:22] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[13:16:22] App launched successfully.
+[13:16:22] Bot started successfully.
+[13:16:22] Task completed.
+[13:16:24] Zooming out...
+[13:16:24] Zoom out 1/10...
+[13:16:24] Zoom out failed: ('Unknown RPC error: -32001 java.lang.IllegalArgumentException', ({'mask': 2097152, 'childOrSibling': [], 'childOrSiblingSelector': [], 'resourceId': 'com.supercell.clashofclans:id/stage'}, 500, 10), 'java.lang.IllegalArgumentException: Percent must be between 0 and 100\n\tat androidx.test.uiautomator.UiObject.pinchOut(UiObject.java:903)\n\tat com.wetest.uia2.stub.AutomatorServiceImpl.pinchOut(AutomatorServiceImpl.java:976)\n\tat com.wetest.uia2.stub.AutomatorServiceImpl.pinchOut(AutomatorServiceImpl.java:972)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.invoke(JsonRpcBasicServer.java:467)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleObject(JsonRpcBasicServer.java:352)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleJsonNodeRequest(JsonRpcBasicServer.java:283)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleRequest(JsonRpcBasicServer.java:251)\n\tat com.wetest.uia2.stub.AutomatorHttpServer.serve(AutomatorHttpServer.java:103)\n\tat fi.iki.elonen.NanoHTTPD.serve(NanoHTTPD.java:2244)\n\tat fi.iki.elonen.NanoHTTPD$HTTPSession.execute(NanoHTTPD.java:945)\n\tat fi.iki.elonen.NanoHTTPD$ClientHandler.run(NanoHTTPD.java:192)\n\tat java.lang.Thread.run(Thread.java:1012)\n')
+[13:16:24] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\modules\uiautomator.py", line 88, in zoom_out
+    stage.pinch_out(percent=500, steps=10)
+  File "C:\ProgramData\miniconda3\Lib\site-packages\uiautomator2\_selector.py", line 293, in pinch_out
+    return self.jsonrpc.pinchOut(self.selector, percent, steps)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\Lib\site-packages\uiautomator2\base.py", line 160, in __call__
+    return self.server.jsonrpc_call(self.method, params, http_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\Lib\site-packages\uiautomator2\core.py", line 331, in jsonrpc_call
+    return _jsonrpc_call(self._dev, self._device_server_port, method, params, timeout, self._debug)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\Lib\site-packages\uiautomator2\core.py", line 202, in _jsonrpc_call
+    raise RPCUnknownError(f"Unknown RPC error: {code} {message}", params, stacktrace)
+uiautomator2.exceptions.RPCUnknownError: ('Unknown RPC error: -32001 java.lang.IllegalArgumentException', ({'mask': 2097152, 'childOrSibling': [], 'childOrSiblingSelector': [], 'resourceId': 'com.supercell.clashofclans:id/stage'}, 500, 10), 'java.lang.IllegalArgumentException: Percent must be between 0 and 100\n\tat androidx.test.uiautomator.UiObject.pinchOut(UiObject.java:903)\n\tat com.wetest.uia2.stub.AutomatorServiceImpl.pinchOut(AutomatorServiceImpl.java:976)\n\tat com.wetest.uia2.stub.AutomatorServiceImpl.pinchOut(AutomatorServiceImpl.java:972)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.invoke(JsonRpcBasicServer.java:467)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleObject(JsonRpcBasicServer.java:352)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleJsonNodeRequest(JsonRpcBasicServer.java:283)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleRequest(JsonRpcBasicServer.java:251)\n\tat com.wetest.uia2.stub.AutomatorHttpServer.serve(AutomatorHttpServer.java:103)\n\tat fi.iki.elonen.NanoHTTPD.serve(NanoHTTPD.java:2244)\n\tat fi.iki.elonen.NanoHTTPD$HTTPSession.execute(NanoHTTPD.java:945)\n\tat fi.iki.elonen.NanoHTTPD$ClientHandler.run(NanoHTTPD.java:192)\n\tat java.lang.Thread.run(Thread.java:1012)\n')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 38, in run
+    task(
+  File "D:\ClashOfClansBot\ClashBot\bot\bot.py", line 80, in zoom_out
+    self.u2.zoom_out()
+  File "D:\ClashOfClansBot\ClashBot\modules\uiautomator.py", line 99, in zoom_out
+    raise RuntimeError(error_msg)
+RuntimeError: Zoom out failed: ('Unknown RPC error: -32001 java.lang.IllegalArgumentException', ({'mask': 2097152, 'childOrSibling': [], 'childOrSiblingSelector': [], 'resourceId': 'com.supercell.clashofclans:id/stage'}, 500, 10), 'java.lang.IllegalArgumentException: Percent must be between 0 and 100\n\tat androidx.test.uiautomator.UiObject.pinchOut(UiObject.java:903)\n\tat com.wetest.uia2.stub.AutomatorServiceImpl.pinchOut(AutomatorServiceImpl.java:976)\n\tat com.wetest.uia2.stub.AutomatorServiceImpl.pinchOut(AutomatorServiceImpl.java:972)\n\tat java.lang.reflect.Method.invoke(Native Method)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.invoke(JsonRpcBasicServer.java:467)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleObject(JsonRpcBasicServer.java:352)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleJsonNodeRequest(JsonRpcBasicServer.java:283)\n\tat com.googlecode.jsonrpc4j.JsonRpcBasicServer.handleRequest(JsonRpcBasicServer.java:251)\n\tat com.wetest.uia2.stub.AutomatorHttpServer.serve(AutomatorHttpServer.java:103)\n\tat fi.iki.elonen.NanoHTTPD.serve(NanoHTTPD.java:2244)\n\tat fi.iki.elonen.NanoHTTPD$HTTPSession.execute(NanoHTTPD.java:945)\n\tat fi.iki.elonen.NanoHTTPD$ClientHandler.run(NanoHTTPD.java:192)\n\tat java.lang.Thread.run(Thread.java:1012)\n')
+
+[13:16:24] Task completed.

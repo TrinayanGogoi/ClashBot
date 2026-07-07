@@ -1,0 +1,39 @@
+[14:58:46] Application started.
+[14:58:47] Starting emulator...
+[14:58:47] Emulator already running (emulator-5554)
+[14:58:47] Waiting for emulator...
+[14:58:47] Connected to emulator-5554
+[14:58:47] Waiting for Android boot...
+[14:58:47] Android boot completed.
+[14:58:47] Connecting to UIAutomator2...
+[14:58:47] UIAutomator2 connected.
+[14:58:47] Launching com.supercell.clashofclans...
+[14:58:47] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[14:58:47] App launched successfully.
+[14:58:47] Bot started successfully.
+[14:58:47] Task completed.
+[14:58:51] Zooming out...
+[14:58:51] Zoom out failed: Command 'adb -s emulator-5554 shell wm size' returned non-zero exit status 1.
+[14:58:51] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\modules\uiautomator.py", line 74, in zoom_out
+    output = subprocess.check_output(f"adb -s {self.serial} shell wm size", shell=True, text=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\Lib\subprocess.py", line 466, in check_output
+    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\ProgramData\miniconda3\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command 'adb -s emulator-5554 shell wm size' returned non-zero exit status 1.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 38, in run
+    task(
+  File "D:\ClashOfClansBot\ClashBot\bot\bot.py", line 80, in zoom_out
+    self.u2.zoom_out()
+  File "D:\ClashOfClansBot\ClashBot\modules\uiautomator.py", line 108, in zoom_out
+    raise RuntimeError(error_msg)
+RuntimeError: Zoom out failed: Command 'adb -s emulator-5554 shell wm size' returned non-zero exit status 1.
+
+[14:58:51] Task completed.

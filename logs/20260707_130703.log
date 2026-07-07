@@ -1,0 +1,35 @@
+[13:07:03] Application started.
+[13:07:05] Starting emulator...
+[13:07:05] Emulator already running (emulator-5554)
+[13:07:05] Waiting for emulator...
+[13:07:05] Connected to emulator-5554
+[13:07:05] Waiting for Android boot...
+[13:07:05] Android boot completed.
+[13:07:05] Connecting to UIAutomator2...
+[13:07:05] UIAutomator2 connected.
+[13:07:05] Launching com.supercell.clashofclans...
+[13:07:05] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[13:07:06] App launched successfully.
+[13:07:06] Bot started successfully.
+[13:07:06] Task completed.
+[13:07:08] Zooming out...
+[13:07:08] Zoom out gesture 1/10...
+[13:07:08] Zoom out failed: 'Device' object has no attribute 'pinch_out'
+[13:07:08] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\modules\uiautomator.py", line 83, in zoom_out
+    self.d.pinch_out(percent=300, steps=5)
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'Device' object has no attribute 'pinch_out'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 38, in run
+    task(
+  File "D:\ClashOfClansBot\ClashBot\bot\bot.py", line 80, in zoom_out
+    self.u2.zoom_out()
+  File "D:\ClashOfClansBot\ClashBot\modules\uiautomator.py", line 94, in zoom_out
+    raise RuntimeError(error_msg)
+RuntimeError: Zoom out failed: 'Device' object has no attribute 'pinch_out'
+
+[13:07:08] Task completed.

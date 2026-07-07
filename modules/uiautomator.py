@@ -1,6 +1,7 @@
 import uiautomator2 as u2
 import yaml
 import time
+import threading
 
 
 class UIAutomator:
@@ -55,25 +56,46 @@ class UIAutomator:
 
         return info
     
-
     def zoom_out(self):
         """
-        Zoom the Clash of Clans village to maximum.
+        Zoom out and center the village view using drag gestures.
         """
-
         if self.logger:
-            self.logger("Zooming out...")
+            self.logger("Zooming out and centering view...")
 
-        if not hasattr(self, "_stage"):
-            self._stage = self.d(resourceId="com.supercell.clashofclans:id/stage")
+        if self.d is None:
+            raise RuntimeError("UIAutomator2 is not connected. Call connect() first.")
 
-        for _ in range(6):
-            self._stage.pinch_out(percent=100, steps=50)
-            time.sleep(0.2)
-
-        if self.logger:
-            self.logger("Zoom completed.")
-    
+        try:
+            # Find the game stage element
+            stage = self.d(resourceId="com.supercell.clashofclans:id/stage")
+            
+            if not stage.exists():
+                if self.logger:
+                    self.logger("Stage element not found!")
+                raise RuntimeError("Cannot find game stage element")
+            
+            # Step 1: Zoom out
+            if self.logger:
+                self.logger("Zooming out...")
+            
+   
+            for i in range(2):
+                # Simple logging without modulo (since only 2 iterations)
+                if self.logger:
+                    self.logger(f"Zoom out {i+1}/2...")
+                
+                stage.pinch_in(percent=50, steps=30)
+                time.sleep(0.12)
+            
+            if self.logger:
+                self.logger("Zoom out successfully.")
+                
+        except Exception as e:
+            error_msg = f"Zoom out failed: {str(e)}"
+            if self.logger:
+                self.logger(error_msg)
+            raise RuntimeError(error_msg)
     # # temporary method to show all public methods of the device
     # def available_methods(self):
     #     """

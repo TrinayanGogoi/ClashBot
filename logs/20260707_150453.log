@@ -1,0 +1,23 @@
+[15:04:53] Application started.
+[15:04:55] Starting emulator...
+[15:04:55] Emulator already running (emulator-5554)
+[15:04:55] Waiting for emulator...
+[15:04:56] Connected to emulator-5554
+[15:04:56] Waiting for Android boot...
+[15:04:56] Android boot completed.
+[15:04:56] Connecting to UIAutomator2...
+[15:04:56] UIAutomator2 connected.
+[15:04:56] Launching com.supercell.clashofclans...
+[15:04:56] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[15:04:56] App launched successfully.
+[15:04:56] Bot started successfully.
+[15:04:56] Task completed.
+[15:04:58] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 38, in run
+    task(
+  File "D:\ClashOfClansBot\ClashBot\bot\bot.py", line 80, in zoom_out
+    self.u2.zoom_out()
+    ^^^^^^^^^^^^^^^^
+AttributeError: 'UIAutomator' object has no attribute 'zoom_out'
+
+[15:04:58] Task completed.
