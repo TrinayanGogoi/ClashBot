@@ -1,6 +1,11 @@
+from COCBot.functions.Vision.detect_attack_button import DetectAttackButton
+from modules import logger
 from modules.emulator import LDPlayer
 from modules.adb import ADB
 from modules.uiautomator import UIAutomator
+from COCBot.functions.Android.zoom_out import ZoomOut
+from modules.vision import Vision
+from COCBot.functions.Vision.draw_match import DrawMatch
 
 class Bot:
     """
@@ -19,17 +24,16 @@ class Bot:
                 logger("Starting emulator...")
         """
 
-        self.logger = logger
-
         self.emulator = LDPlayer()
-        self.adb = ADB()    
-        self.u2 = UIAutomator()
+        self.adb = ADB()
+        self.uiautomator = UIAutomator()
+        self.vision = Vision()
 
-        
-        # Give the emulator access to the same logger
+        self.logger = logger
         self.emulator.logger = logger
-        self.u2.logger = logger
         self.adb.logger = logger
+        self.uiautomator.logger = logger
+        self.vision.logger = logger
 
     def log(self, message):
         """
@@ -55,7 +59,7 @@ class Bot:
         # self.log("Waiting for Android boot...")
 
         self.emulator.wait_for_boot()
-        self.u2.connect()
+        self.uiautomator.connect()
 
         # self.log("Launching Clash of Clans...")
 
@@ -68,15 +72,28 @@ class Bot:
         self.adb.screenshot(save=True)
     
     def device_info(self):
-        self.u2.device_info()
-
-    # def available_methods(self):
-    #     self.u2.available_methods()
-
-    # def dump_hierarchy(self):
-    #     self.u2.dump_hierarchy()
+        self.uiautomator.device_info()
 
     def zoom_out(self):
-        self.u2.zoom_out()
+        ZoomOut(self.uiautomator, self.logger).run()
 
 
+    def test_vision(self):
+        image = self.adb.screenshot()
+
+        result = DetectAttackButton(
+            self.vision,
+            self.logger,
+        ).run(image)
+
+        if result["found"]:
+            self.log(str(result))
+            # self.log("Attack button found. Clicking...")
+            # self.adb.tap(
+            #     result["center_x"],
+            #     result["center_y"],
+            # )
+            DrawMatch(self.logger).run(image, result)
+
+        else:
+            self.log("Template not found.")

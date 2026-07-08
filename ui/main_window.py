@@ -95,7 +95,7 @@ class MainWindow(QWidget):
 
         self.start_button.clicked.connect(self.toggle_bot) # not using Lambda here because we want to toggle the bot state
         self.screenshot_button.clicked.connect(self.capture_screenshot) # not using Lambda here because we want to capture a screenshot
-        self.zoom_button.clicked.connect(lambda: self.run_task("zoom_out"))
+        self.zoom_button.clicked.connect(lambda: self.run_task("test_vision"))
         self.logger.log("Application started.")
 
     # ==========================================================

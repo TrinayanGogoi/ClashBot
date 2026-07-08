@@ -1,0 +1,15 @@
+[12:18:56] Application started.
+[12:19:02] Loaded image: captures\20260708_121715.png
+[12:19:02] Loaded image: templates\AttackBar\Attack_Button_HomeVillage.png
+[12:19:02] Match confidence: 1.000
+[12:19:02] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 38, in run
+    task(
+  File "D:\ClashOfClansBot\ClashBot\bot\bot.py", line 84, in test_vision
+    self.log(str(result))
+  File "D:\ClashOfClansBot\ClashBot\bot\bot.py", line 39, in log
+    if self.logger:
+       ^^^^^^^^^^^
+AttributeError: 'Bot' object has no attribute 'logger'
+
+[12:19:02] Task completed.
