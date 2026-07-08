@@ -1,0 +1,45 @@
+[19:19:21] Application started.
+[19:19:23] Starting emulator...
+[19:19:24] Emulator already running (emulator-5554)
+[19:19:24] Waiting for emulator...
+[19:19:24] Connected to emulator-5554
+[19:19:24] Waiting for Android boot...
+[19:19:24] Android boot completed.
+[19:19:24] Connecting to UIAutomator2...
+[19:19:25] UIAutomator2 connected.
+[19:19:26] Launching com.supercell.clashofclans...
+[19:19:26] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[19:19:26] App launched successfully.
+[19:19:26] Bot started successfully.
+[19:19:26] Task completed.
+[19:19:30] Zooming out...
+[19:19:30] Zoom out 1/2
+[19:19:32] Zoom out 2/2
+[19:19:33] Zoom complete.
+[19:19:33] Task completed.
+[19:19:37] Capturing screenshot...
+[19:19:38] Searching 1 Attack Button templates...
+[19:19:38] Loaded image: templates\AttackBar\Attack_Button_HomeVillage.png
+[19:19:38] Match confidence: 0.999
+[19:19:38] Attack Button found using Attack_Button_HomeVillage.png
+[19:19:38] Detected 9 object(s).
+[19:19:38] found
+[19:19:38] x
+[19:19:38] y
+[19:19:38] center_x
+[19:19:38] center_y
+[19:19:38] confidence
+[19:19:38] width
+[19:19:38] height
+[19:19:38] template
+[19:19:38] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 38, in run
+    task(
+  File "D:\ClashOfClansBot\ClashBot\bot\bot.py", line 116, in test_vision
+    DrawMatches(self.logger).run(image, matches)
+  File "D:\ClashOfClansBot\ClashBot\COCBot\functions\Vision\draw_match.py", line 17, in run
+    if not result["found"]:
+           ~~~~~~^^^^^^^^^
+TypeError: string indices must be integers, not 'str'
+
+[19:19:38] Task completed.

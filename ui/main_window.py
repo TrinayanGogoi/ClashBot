@@ -1,7 +1,7 @@
 import traceback
 from functools import partial
 from modules.logger import Logger
-
+from PySide6.QtWidgets import QComboBox
 from PySide6.QtCore import Qt, QThread, Signal
 from PySide6.QtWidgets import (
     QLabel,
@@ -70,6 +70,13 @@ class MainWindow(QWidget):
         self.start_button = QPushButton("▶ Start Bot")
         self.screenshot_button = QPushButton("Capture Screenshot")
         self.zoom_button = QPushButton("Zoom Out")
+        self.detector_box = QComboBox()
+        self.detector_box.addItems([
+            "Gold Mines",
+            "Attack Button",
+            # "Clan Castle",
+            # "Town Hall",
+        ])
         self.test_vision_button = QPushButton("Test Vision")
 
         self.bot_running = False
@@ -86,6 +93,7 @@ class MainWindow(QWidget):
         layout.addWidget(self.start_button)
         layout.addWidget(self.screenshot_button)
         layout.addWidget(self.zoom_button)
+        layout.addWidget(self.detector_box)
         layout.addWidget(self.test_vision_button)
         layout.addWidget(self.log_box)
 
@@ -98,7 +106,9 @@ class MainWindow(QWidget):
         self.start_button.clicked.connect(self.toggle_bot) # not using Lambda here because we want to toggle the bot state
         self.screenshot_button.clicked.connect(self.capture_screenshot) # not using Lambda here because we want to capture a screenshot
         self.zoom_button.clicked.connect(lambda: self.run_task("zoom_out"))
-        self.test_vision_button.clicked.connect(lambda: self.run_task("test_vision"))
+        self.test_vision_button.clicked.connect(
+            self.test_selected_detector
+        )
         self.logger.log("Application started.")
 
     # ==========================================================
@@ -200,3 +210,16 @@ class MainWindow(QWidget):
         if self.worker:
             self.worker.deleteLater()
             self.worker = None
+
+    # ==========================================================
+    # Test functions
+    # ==========================================================
+
+    def test_selected_detector(self):
+
+        detector = self.detector_box.currentText()
+
+        self.run_task(
+            "test_vision",
+            detector,
+        )

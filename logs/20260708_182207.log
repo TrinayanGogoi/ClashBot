@@ -1,0 +1,59 @@
+[18:22:07] Application started.
+[18:22:11] Starting emulator...
+[18:22:14] Starting LDPlayer instance 0...
+[18:22:14] Waiting for emulator...
+[18:22:59] Connected to emulator-5554
+[18:22:59] Waiting for Android boot...
+[18:22:59] Android boot completed.
+[18:22:59] Connecting to UIAutomator2...
+[18:23:02] UIAutomator2 connected.
+[18:23:02] Launching com.supercell.clashofclans...
+[18:23:02] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[18:23:02] App launched successfully.
+[18:23:02] Bot started successfully.
+[18:23:02] Task completed.
+[18:23:22] Zooming out...
+[18:23:22] Zoom out 1/2
+[18:23:23] Zoom out 2/2
+[18:23:24] Zoom complete.
+[18:23:24] Task completed.
+[18:23:35] Capturing screenshot...
+[18:23:37] Searching 17 Gold Mine ORB templates...
+[18:23:37] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine1.png
+[18:23:37] ORB matches: 0
+[18:23:37] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine10.png
+[18:23:37] ORB matches: 0
+[18:23:37] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine11.png
+[18:23:37] ORB matches: 0
+[18:23:37] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine12.png
+[18:23:37] ORB matches: 0
+[18:23:37] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine13.png
+[18:23:37] ORB matches: 0
+[18:23:37] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine14.png
+[18:23:37] ORB matches: 1
+[18:23:37] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine15.png
+[18:23:37] ORB matches: 1
+[18:23:37] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine16.png
+[18:23:37] ORB matches: 0
+[18:23:37] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine17.png
+[18:23:37] ORB matches: 0
+[18:23:37] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine2.png
+[18:23:38] ORB matches: 0
+[18:23:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine3.png
+[18:23:38] ORB matches: 0
+[18:23:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine4.png
+[18:23:38] ORB matches: 0
+[18:23:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine5.png
+[18:23:38] ORB matches: 0
+[18:23:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine6.png
+[18:23:38] ORB matches: 0
+[18:23:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine7.png
+[18:23:38] ORB matches: 0
+[18:23:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine8.png
+[18:23:38] ORB matches: 0
+[18:23:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine9.png
+[18:23:38] ORB matches: 1
+[18:23:38] Detected 0 Gold Mines.
+[18:23:38] Detected 0 Gold Mines.
+[18:23:38] No Gold Mines found.
+[18:23:38] Task completed.

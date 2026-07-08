@@ -8,6 +8,7 @@ from COCBot.functions.Android.zoom_out import ZoomOut
 from modules.vision import Vision
 from COCBot.functions.Vision.draw_match import DrawMatches
 
+
 class Bot:
     """
     Main bot controller.
@@ -79,25 +80,83 @@ class Bot:
         ZoomOut(self.uiautomator, self.logger).run()
 
 
-    def test_vision(self):
+    def test_vision(self, detector_name):
+
         image = self.adb.screenshot()
 
-        matches = DetectGoldMines(
+        detectors = {
+            "Gold Mines": DetectGoldMines,
+            "Attack Button": DetectAttackButton,
+            # "Clan Castle": DetectClanCastle,
+            # "Town Hall": DetectTownHall,
+        }
+
+        detector_class = detectors.get(detector_name)
+
+        if detector_class is None:
+            self.log(f"Unknown detector: {detector_name}")
+            return
+
+        detector = detector_class(
             self.vision,
             self.logger,
-        ).run(image)
+        )
 
-        self.log(f"Detected {len(matches)} Gold Mines.")
+        matches = detector.run(image)
+
+        self.log(f"Detected {len(matches)} object(s).")
 
         if not matches:
-            self.log("No Gold Mines found.")
+            self.log("Nothing found.")
             return
 
         for match in matches:
             self.log(str(match))
-            # self.log("Attack button found. Clicking...")
-            # self.adb.tap(
-            #     result["center_x"],
-            #     result["center_y"],
-            # )
-            DrawMatches(self.logger).run(image, matches)
+
+        DrawMatches(self.logger).run(image, matches)
+
+    # def test_vision(self, detector):
+    #     image = self.adb.screenshot()
+
+    #     # matches = DetectGoldMines(
+    #     #     self.vision,
+    #     #     self.logger,
+    #     # ).run(image)
+
+    #     matches = detector.run(image)
+        
+    #     self.log(f"Detected {len(matches)} Gold Mines.")
+
+    #     if not matches:
+    #         self.log("No Gold Mines found.")
+    #         return
+
+    #     for match in matches:
+    #         self.log(str(match))
+    #         # self.log("Attack button found. Clicking...")
+    #         # self.adb.tap(
+    #         #     result["center_x"],
+    #         #     result["center_y"],
+    #         # )
+    #     if matches:    
+    #         DrawMatches(self.logger).run(image, matches)
+    #     else:
+    #         self.log("No Gold Mines found.")
+
+
+
+    # def test_gold_mines(self):
+    #     self.test_vision(
+    #         DetectGoldMines(
+    #             self.vision,
+    #             self.logger,
+    #         )
+    #     )
+
+    # def test_attack_button(self):
+    #     self.test_vision(
+    #         DetectAttackButton(
+    #             self.vision,
+    #             self.logger,
+    #         )
+    #     )

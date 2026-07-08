@@ -1,0 +1,59 @@
+[18:35:59] Application started.
+[18:36:04] Starting emulator...
+[18:36:04] Emulator already running (emulator-5554)
+[18:36:04] Waiting for emulator...
+[18:36:04] Connected to emulator-5554
+[18:36:04] Waiting for Android boot...
+[18:36:04] Android boot completed.
+[18:36:04] Connecting to UIAutomator2...
+[18:36:05] UIAutomator2 connected.
+[18:36:05] Launching com.supercell.clashofclans...
+[18:36:05] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[18:36:05] App launched successfully.
+[18:36:05] Bot started successfully.
+[18:36:05] Task completed.
+[18:36:12] Zooming out...
+[18:36:12] Zoom out 1/2
+[18:36:13] Zoom out 2/2
+[18:36:15] Zoom complete.
+[18:36:15] Task completed.
+[18:36:18] Capturing screenshot...
+[18:36:19] Searching 17 Gold Mine templates...
+[18:36:19] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine1.png
+[18:36:19] Match confidence: 0.478
+[18:36:19] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine10.png
+[18:36:19] Match confidence: 0.398
+[18:36:19] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine11.png
+[18:36:19] Match confidence: 0.385
+[18:36:19] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine12.png
+[18:36:19] Match confidence: 0.336
+[18:36:19] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine13.png
+[18:36:19] Match confidence: 0.321
+[18:36:19] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine14.png
+[18:36:19] Match confidence: 0.431
+[18:36:19] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine15.png
+[18:36:20] Match confidence: 0.419
+[18:36:20] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine16.png
+[18:36:20] Match confidence: 0.317
+[18:36:20] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine17.png
+[18:36:20] Match confidence: 0.288
+[18:36:20] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine2.png
+[18:36:20] Match confidence: 0.428
+[18:36:20] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine3.png
+[18:36:20] Match confidence: 0.465
+[18:36:20] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine4.png
+[18:36:20] Match confidence: 0.432
+[18:36:20] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine5.png
+[18:36:20] Match confidence: 0.523
+[18:36:20] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine6.png
+[18:36:20] Match confidence: 0.507
+[18:36:20] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine7.png
+[18:36:20] Match confidence: 0.506
+[18:36:20] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine8.png
+[18:36:21] Match confidence: 0.477
+[18:36:21] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine9.png
+[18:36:21] Match confidence: 0.488
+[18:36:21] Detected 0 Gold Mines.
+[18:36:21] Detected 0 Gold Mines.
+[18:36:21] No Gold Mines found.
+[18:36:21] Task completed.

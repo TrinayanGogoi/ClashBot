@@ -1,0 +1,122 @@
+[18:30:18] Application started.
+[18:30:20] Starting emulator...
+[18:30:20] Emulator already running (emulator-5554)
+[18:30:20] Waiting for emulator...
+[18:30:20] Connected to emulator-5554
+[18:30:20] Waiting for Android boot...
+[18:30:20] Android boot completed.
+[18:30:20] Connecting to UIAutomator2...
+[18:30:21] UIAutomator2 connected.
+[18:30:21] Launching com.supercell.clashofclans...
+[18:30:21] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[18:30:21] App launched successfully.
+[18:30:21] Bot started successfully.
+[18:30:21] Task completed.
+[18:30:44] Bot stopped.
+[18:30:44] Starting emulator...
+[18:30:44] Emulator already running (emulator-5554)
+[18:30:44] Waiting for emulator...
+[18:30:45] Connected to emulator-5554
+[18:30:45] Waiting for Android boot...
+[18:30:45] Android boot completed.
+[18:30:45] Connecting to UIAutomator2...
+[18:30:45] UIAutomator2 connected.
+[18:30:45] Launching com.supercell.clashofclans...
+[18:30:45] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[18:30:45] App launched successfully.
+[18:30:45] Bot started successfully.
+[18:30:45] Task completed.
+[18:31:14] Bot stopped.
+[18:31:14] Starting emulator...
+[18:31:15] Starting LDPlayer instance 0...
+[18:31:15] Waiting for emulator...
+[18:31:47] Connected to emulator-5554
+[18:31:47] Waiting for Android boot...
+[18:31:47] Android boot completed.
+[18:31:47] Connecting to UIAutomator2...
+[18:31:50] UIAutomator2 connected.
+[18:31:50] Launching com.supercell.clashofclans...
+[18:31:50] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[18:31:51] App launched successfully.
+[18:31:51] Bot started successfully.
+[18:31:51] Task completed.
+[18:32:07] Zooming out...
+[18:32:08] Zoom out 1/2
+[18:32:09] Zoom out 2/2
+[18:32:10] Zoom complete.
+[18:32:10] Task completed.
+[18:32:11] Capturing screenshot...
+[18:32:12] Searching 17 Gold Mine ORB templates...
+[18:32:12] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine1.png
+[18:32:12] Reference keypoints: 40
+[18:32:12] Screenshot keypoints: 1000
+[18:32:12] ORB matches: 0
+[18:32:12] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine10.png
+[18:32:12] Reference keypoints: 52
+[18:32:12] Screenshot keypoints: 1000
+[18:32:12] ORB matches: 0
+[18:32:12] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine11.png
+[18:32:12] Reference keypoints: 44
+[18:32:12] Screenshot keypoints: 1000
+[18:32:12] ORB matches: 1
+[18:32:12] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine12.png
+[18:32:12] Reference keypoints: 50
+[18:32:12] Screenshot keypoints: 1000
+[18:32:12] ORB matches: 0
+[18:32:12] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine13.png
+[18:32:12] Reference keypoints: 66
+[18:32:12] Screenshot keypoints: 1000
+[18:32:12] ORB matches: 0
+[18:32:12] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine14.png
+[18:32:12] Reference keypoints: 50
+[18:32:12] Screenshot keypoints: 1000
+[18:32:12] ORB matches: 1
+[18:32:12] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine15.png
+[18:32:12] Reference keypoints: 52
+[18:32:12] Screenshot keypoints: 1000
+[18:32:12] ORB matches: 0
+[18:32:12] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine16.png
+[18:32:12] Reference keypoints: 106
+[18:32:12] Screenshot keypoints: 1000
+[18:32:12] ORB matches: 0
+[18:32:12] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine17.png
+[18:32:13] Reference keypoints: 112
+[18:32:13] Screenshot keypoints: 1000
+[18:32:13] ORB matches: 0
+[18:32:13] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine2.png
+[18:32:13] Reference keypoints: 46
+[18:32:13] Screenshot keypoints: 1000
+[18:32:13] ORB matches: 0
+[18:32:13] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine3.png
+[18:32:13] Reference keypoints: 51
+[18:32:13] Screenshot keypoints: 1000
+[18:32:13] ORB matches: 0
+[18:32:13] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine4.png
+[18:32:13] Reference keypoints: 42
+[18:32:13] Screenshot keypoints: 1000
+[18:32:13] ORB matches: 1
+[18:32:13] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine5.png
+[18:32:13] Reference keypoints: 52
+[18:32:13] Screenshot keypoints: 1000
+[18:32:13] ORB matches: 0
+[18:32:13] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine6.png
+[18:32:13] Reference keypoints: 59
+[18:32:13] Screenshot keypoints: 1000
+[18:32:13] ORB matches: 1
+[18:32:13] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine7.png
+[18:32:13] Reference keypoints: 47
+[18:32:13] Screenshot keypoints: 1000
+[18:32:13] ORB matches: 0
+[18:32:13] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine8.png
+[18:32:13] Reference keypoints: 51
+[18:32:13] Screenshot keypoints: 1000
+[18:32:13] ORB matches: 1
+[18:32:13] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine9.png
+[18:32:13] Reference keypoints: 47
+[18:32:13] Screenshot keypoints: 1000
+[18:32:13] ORB matches: 0
+[18:32:13] Detected 0 Gold Mines.
+[18:32:13] Detected 0 Gold Mines.
+[18:32:13] No Gold Mines found.
+[18:32:13] Task completed.
+[18:32:26] Bot stopped.
