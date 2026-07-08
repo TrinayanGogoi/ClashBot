@@ -73,3 +73,4 @@ class Vision:
             "width": width,
             "height": height,
         }
+    

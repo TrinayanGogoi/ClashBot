@@ -1,9 +1,9 @@
 from pathlib import Path
 
 
-class DetectAttackButton:
+class DetectGoldMines:
     """
-    Detect the Attack button on the Home Village screen.
+    Detect all Gold Mines on the current screen.
     """
 
     def __init__(self, vision, logger=None):
@@ -12,7 +12,7 @@ class DetectAttackButton:
         self.logger = logger
 
         self.template_folder = Path(
-            "templates/AttackBar"
+            "templates/Storages/Collectors/GoldMines"
         )
 
     def log(self, message):
@@ -22,12 +22,14 @@ class DetectAttackButton:
 
     def run(self, screenshot):
 
+        gold_mines = []
+
         templates = sorted(
             self.template_folder.glob("*.png")
         )
 
         self.log(
-            f"Searching {len(templates)} Attack Button templates..."
+            f"Searching {len(templates)} Gold Mine templates..."
         )
 
         for template in templates:
@@ -35,21 +37,17 @@ class DetectAttackButton:
             result = self.vision.find_template(
                 screenshot,
                 str(template),
-                threshold=0.90,
+                threshold=0.80,
             )
 
             if result["found"]:
 
                 result["template"] = template.name
 
-                self.log(
-                    f"Attack Button found using {template.name}"
-                )
+                gold_mines.append(result)
 
-                return result
+        self.log(
+            f"Detected {len(gold_mines)} Gold Mines."
+        )
 
-        self.log("Attack Button not found.")
-
-        return {
-            "found": False
-        }
+        return gold_mines

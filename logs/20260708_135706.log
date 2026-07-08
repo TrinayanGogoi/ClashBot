@@ -1,0 +1,60 @@
+[13:57:06] Application started.
+[13:57:08] Starting emulator...
+[13:57:08] Starting LDPlayer instance 0...
+[13:57:08] Waiting for emulator...
+[13:57:45] Connected to emulator-5554
+[13:57:45] Waiting for Android boot...
+[13:57:45] Android boot completed.
+[13:57:45] Connecting to UIAutomator2...
+[13:57:49] UIAutomator2 connected.
+[13:57:49] Launching com.supercell.clashofclans...
+[13:57:49] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[13:57:49] App launched successfully.
+[13:57:49] Bot started successfully.
+[13:57:49] Task completed.
+[13:58:36] Capturing screenshot...
+[13:58:38] Searching 17 Gold Mine templates...
+[13:58:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine1.png
+[13:58:38] Match confidence: 0.433
+[13:58:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine10.png
+[13:58:38] Match confidence: 0.382
+[13:58:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine11.png
+[13:58:38] Match confidence: 0.391
+[13:58:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine12.png
+[13:58:38] Match confidence: 0.407
+[13:58:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine13.png
+[13:58:38] Match confidence: 0.389
+[13:58:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine14.png
+[13:58:38] Match confidence: 0.428
+[13:58:38] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine15.png
+[13:58:39] Match confidence: 0.403
+[13:58:39] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine16.png
+[13:58:39] Match confidence: 0.303
+[13:58:39] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine17.png
+[13:58:39] Match confidence: 0.288
+[13:58:39] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine2.png
+[13:58:39] Match confidence: 0.425
+[13:58:39] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine3.png
+[13:58:39] Match confidence: 0.417
+[13:58:39] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine4.png
+[13:58:39] Match confidence: 0.413
+[13:58:39] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine5.png
+[13:58:39] Match confidence: 0.494
+[13:58:39] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine6.png
+[13:58:39] Match confidence: 0.477
+[13:58:39] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine7.png
+[13:58:39] Match confidence: 0.473
+[13:58:39] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine8.png
+[13:58:40] Match confidence: 0.439
+[13:58:40] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine9.png
+[13:58:40] Match confidence: 0.449
+[13:58:40] Detected 0 Gold Mines.
+[13:58:40] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 38, in run
+    task(
+  File "D:\ClashOfClansBot\ClashBot\bot\bot.py", line 90, in test_vision
+    if result["found"]:
+       ~~~~~~^^^^^^^^^
+TypeError: list indices must be integers or slices, not str
+
+[13:58:40] Task completed.

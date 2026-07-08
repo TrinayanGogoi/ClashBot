@@ -1,0 +1,91 @@
+[14:17:02] Application started.
+[14:17:10] Starting emulator...
+[14:17:10] Emulator already running (emulator-5554)
+[14:17:10] Waiting for emulator...
+[14:17:10] Connected to emulator-5554
+[14:17:10] Waiting for Android boot...
+[14:17:10] Android boot completed.
+[14:17:10] Connecting to UIAutomator2...
+[14:17:11] UIAutomator2 connected.
+[14:17:11] Launching com.supercell.clashofclans...
+[14:17:11] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[14:17:11] App launched successfully.
+[14:17:11] Bot started successfully.
+[14:17:11] Task completed.
+[14:17:20] Capturing screenshot...
+[14:17:21] Screenshot saved: captures\20260708_141721.png
+[14:17:21] Task completed.
+[14:17:23] Zooming out...
+[14:17:23] Zoom out 1/2
+[14:17:24] Zoom out 2/2
+[14:17:25] Zoom complete.
+[14:17:25] Task completed.
+[14:17:27] Capturing screenshot...
+[14:17:27] Searching 17 Gold Mine templates...
+[14:17:27] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine1.png
+[14:17:28] Match confidence: 0.423
+[14:17:28] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine10.png
+[14:17:28] Match confidence: 0.431
+[14:17:28] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine11.png
+[14:17:28] Match confidence: 0.406
+[14:17:28] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine12.png
+[14:17:28] Match confidence: 0.388
+[14:17:28] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine13.png
+[14:17:28] Match confidence: 0.369
+[14:17:28] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine14.png
+[14:17:28] Match confidence: 0.434
+[14:17:28] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine15.png
+[14:17:28] Match confidence: 0.418
+[14:17:28] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine16.png
+[14:17:28] Match confidence: 0.304
+[14:17:28] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine17.png
+[14:17:28] Match confidence: 0.289
+[14:17:28] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine2.png
+[14:17:28] Match confidence: 0.437
+[14:17:28] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine3.png
+[14:17:28] Match confidence: 0.426
+[14:17:29] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine4.png
+[14:17:29] Match confidence: 0.427
+[14:17:29] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine5.png
+[14:17:29] Match confidence: 0.491
+[14:17:29] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine6.png
+[14:17:29] Match confidence: 0.473
+[14:17:29] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine7.png
+[14:17:29] Match confidence: 0.460
+[14:17:29] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine8.png
+[14:17:29] Match confidence: 0.451
+[14:17:29] Loaded image: templates\Storages\Collectors\GoldMines\Gold_Mine9.png
+[14:17:29] Match confidence: 0.436
+[14:17:29] Detected 15 Gold Mines.
+[14:17:29] Detected 15 Gold Mines.
+[14:17:29] {'found': True, 'x': 1494, 'y': 10, 'center_x': 1544, 'center_y': 53, 'confidence': 0.4225790202617645, 'width': 100, 'height': 86, 'template': 'Gold_Mine1.png'}
+[14:17:29] Debug image saved: captures/debug_matches.png
+[14:17:29] {'found': True, 'x': 1304, 'y': 801, 'center_x': 1354, 'center_y': 844, 'confidence': 0.43103721737861633, 'width': 100, 'height': 86, 'template': 'Gold_Mine10.png'}
+[14:17:29] Debug image saved: captures/debug_matches.png
+[14:17:29] {'found': True, 'x': 1304, 'y': 799, 'center_x': 1354, 'center_y': 842, 'confidence': 0.4060726463794708, 'width': 100, 'height': 86, 'template': 'Gold_Mine11.png'}
+[14:17:29] Debug image saved: captures/debug_matches.png
+[14:17:29] {'found': True, 'x': 713, 'y': 623, 'center_x': 763, 'center_y': 666, 'confidence': 0.38807806372642517, 'width': 100, 'height': 86, 'template': 'Gold_Mine12.png'}
+[14:17:29] Debug image saved: captures/debug_matches.png
+[14:17:29] {'found': True, 'x': 1062, 'y': 632, 'center_x': 1112, 'center_y': 675, 'confidence': 0.3693598210811615, 'width': 100, 'height': 86, 'template': 'Gold_Mine13.png'}
+[14:17:29] Debug image saved: captures/debug_matches.png
+[14:17:29] {'found': True, 'x': 17, 'y': 376, 'center_x': 67, 'center_y': 419, 'confidence': 0.43357953429222107, 'width': 100, 'height': 86, 'template': 'Gold_Mine14.png'}
+[14:17:30] Debug image saved: captures/debug_matches.png
+[14:17:30] {'found': True, 'x': 1488, 'y': 1, 'center_x': 1538, 'center_y': 44, 'confidence': 0.41804736852645874, 'width': 100, 'height': 86, 'template': 'Gold_Mine15.png'}
+[14:17:30] Debug image saved: captures/debug_matches.png
+[14:17:30] {'found': True, 'x': 1488, 'y': 500, 'center_x': 1538, 'center_y': 543, 'confidence': 0.4366099536418915, 'width': 100, 'height': 86, 'template': 'Gold_Mine2.png'}
+[14:17:30] Debug image saved: captures/debug_matches.png
+[14:17:30] {'found': True, 'x': 1488, 'y': 497, 'center_x': 1538, 'center_y': 540, 'confidence': 0.42560622096061707, 'width': 100, 'height': 86, 'template': 'Gold_Mine3.png'}
+[14:17:30] Debug image saved: captures/debug_matches.png
+[14:17:30] {'found': True, 'x': 1488, 'y': 500, 'center_x': 1538, 'center_y': 543, 'confidence': 0.42748332023620605, 'width': 100, 'height': 86, 'template': 'Gold_Mine4.png'}
+[14:17:30] Debug image saved: captures/debug_matches.png
+[14:17:30] {'found': True, 'x': 1496, 'y': 14, 'center_x': 1546, 'center_y': 57, 'confidence': 0.4908401072025299, 'width': 100, 'height': 86, 'template': 'Gold_Mine5.png'}
+[14:17:30] Debug image saved: captures/debug_matches.png
+[14:17:30] {'found': True, 'x': 1495, 'y': 13, 'center_x': 1545, 'center_y': 56, 'confidence': 0.4734739363193512, 'width': 100, 'height': 86, 'template': 'Gold_Mine6.png'}
+[14:17:30] Debug image saved: captures/debug_matches.png
+[14:17:30] {'found': True, 'x': 1494, 'y': 13, 'center_x': 1544, 'center_y': 56, 'confidence': 0.4604696035385132, 'width': 100, 'height': 86, 'template': 'Gold_Mine7.png'}
+[14:17:30] Debug image saved: captures/debug_matches.png
+[14:17:30] {'found': True, 'x': 1487, 'y': 500, 'center_x': 1537, 'center_y': 543, 'confidence': 0.45146170258522034, 'width': 100, 'height': 86, 'template': 'Gold_Mine8.png'}
+[14:17:30] Debug image saved: captures/debug_matches.png
+[14:17:30] {'found': True, 'x': 1494, 'y': 2, 'center_x': 1544, 'center_y': 45, 'confidence': 0.4359211027622223, 'width': 100, 'height': 86, 'template': 'Gold_Mine9.png'}
+[14:17:30] Debug image saved: captures/debug_matches.png
+[14:17:30] Task completed.

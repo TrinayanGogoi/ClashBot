@@ -1,59 +1,63 @@
+
 import cv2
 from pathlib import Path
 
 
-class DrawMatch:
+class DrawMatches:
 
     def __init__(self, logger=None):
         self.logger = logger
 
-    def run(self, image, result, output="captures/debug_match.png"):
+    def run(self, image, results, output="captures/debug_matches.png"):
 
-        if not result["found"]:
-            return
+        debug = image.copy()
 
-        x = result["x"]
-        y = result["y"]
-        w = result["width"]
-        h = result["height"]
+        for result in results:
 
-        cx = result["center_x"]
-        cy = result["center_y"]
+            if not result["found"]:
+                continue
 
-        confidence = result["confidence"]
+            x = result["x"]
+            y = result["y"]
+            w = result["width"]
+            h = result["height"]
 
-        # Green rectangle
-        cv2.rectangle(
-            image,
-            (x, y),
-            (x + w, y + h),
-            (0, 255, 0),
-            2,
-        )
+            cx = result["center_x"]
+            cy = result["center_y"]
 
-        # Red center dot
-        cv2.circle(
-            image,
-            (cx, cy),
-            5,
-            (0, 0, 255),
-            -1,
-        )
+            confidence = result["confidence"]
 
-        # Confidence text
-        cv2.putText(
-            image,
-            f"{confidence:.3f}",
-            (x, y - 10),
-            cv2.FONT_HERSHEY_SIMPLEX,
-            0.7,
-            (0, 255, 0),
-            2,
-        )
+            # Green rectangle
+            cv2.rectangle(
+                debug,
+                (x, y),
+                (x + w, y + h),
+                (0, 255, 0),
+                2,
+            )
+
+            # Red Center Dot
+            cv2.circle(
+                debug,
+                (cx, cy),
+                5,
+                (0, 0, 255),
+                -1,
+            )
+
+            # Confidence Text
+            cv2.putText(
+                debug,
+                f"{confidence:.2f}",
+                (x, y - 10),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.6,
+                (0, 255, 0),
+                2,
+            )
 
         Path(output).parent.mkdir(exist_ok=True)
-
-        cv2.imwrite(output, image)
+        cv2.imwrite(output, debug)
 
         if self.logger:
             self.logger(f"Debug image saved: {output}")
