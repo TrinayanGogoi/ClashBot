@@ -46,6 +46,7 @@ You also need:
 - An Android emulator (MEmu / LDPlayer / Nox / BlueStacks) with ADB debugging
   enabled, running Clash of Clans, logged into a **test account** — not your
   main account (see "Important caveats" below).
+- uianimator2 for zoom / pinch / tap etc
 
 ## Calibration steps (required before it will actually work)
 
