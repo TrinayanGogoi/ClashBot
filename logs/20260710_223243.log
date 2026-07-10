@@ -1,0 +1,25 @@
+[22:32:43] Application started.
+[22:32:56] Zooming out...
+[22:32:56] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 38, in run
+    task(
+  File "D:\ClashOfClansBot\ClashBot\bot\bot.py", line 81, in zoom_out
+    ZoomOut(self.uiautomator, self.logger).run()
+  File "D:\ClashOfClansBot\ClashBot\COCBot\functions\Android\zoom_out.py", line 15, in run
+    stage = self.ui.d(resourceId="com.supercell.clashofclans:id/stage")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+
+[22:32:56] Task completed.
+[22:33:13] Zooming out...
+[22:33:13] Traceback (most recent call last):
+  File "D:\ClashOfClansBot\ClashBot\ui\main_window.py", line 38, in run
+    task(
+  File "D:\ClashOfClansBot\ClashBot\bot\bot.py", line 81, in zoom_out
+    ZoomOut(self.uiautomator, self.logger).run()
+  File "D:\ClashOfClansBot\ClashBot\COCBot\functions\Android\zoom_out.py", line 15, in run
+    stage = self.ui.d(resourceId="com.supercell.clashofclans:id/stage")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'NoneType' object is not callable
+
+[22:33:13] Task completed.

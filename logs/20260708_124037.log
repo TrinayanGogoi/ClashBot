@@ -1,6 +1,0 @@
-[12:40:37] Application started.
-[12:41:39] Capturing screenshot...
-[12:41:40] Loaded image: templates/AttackBar/Attack_Button_HomeVillage.png
-[12:41:41] Match confidence: 1.000
-[12:41:41] {'found': True, 'x': 32, 'y': 747, 'center_x': 105, 'center_y': 807, 'confidence': 0.9999167323112488, 'width': 147, 'height': 121}
-[12:41:41] Task completed.

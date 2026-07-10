@@ -73,6 +73,7 @@ class MainWindow(QWidget):
         self.detector_box = QComboBox()
         self.detector_box.addItems([
             "Gold Mines",
+            "Elixir Collectors",
             "Attack Button",
             # "Clan Castle",
             # "Town Hall",

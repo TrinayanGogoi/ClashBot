@@ -1,6 +1,6 @@
 import cv2
 from pathlib import Path
-
+import numpy as np
 
 class Vision:
     """
@@ -33,17 +33,65 @@ class Vision:
 
         return image
     
-    def find_template(self, screenshot, template_path, threshold=0.8):
-        """
-        Find a template inside a screenshot.
+    # Only returns the first match found, if any. Use find_all_templates to get all matches.
+    # def find_template(self, screenshot, template_path, threshold=0.8):
+    #     """
+    #     Find a template inside a screenshot.
 
-        Returns:
-            (x, y, confidence) if found
-            None otherwise
+    #     Returns:
+    #         (x, y, confidence) if found
+    #         None otherwise
+    #     """
+
+    #     # screenshot = self.load_image(screenshot)
+    #     template = self.load_image(template_path)
+
+    #     result = cv2.matchTemplate(
+    #         screenshot,
+    #         template,
+    #         cv2.TM_CCOEFF_NORMED,
+    #     )
+
+    #     _, confidence, _, location = cv2.minMaxLoc(result)
+
+    #     self.log(f"Match confidence: {confidence:.3f}")
+
+    #     if confidence < threshold:
+    #         return {
+    #             "found": False
+    #         }
+
+    #     x, y = location
+
+    #     height, width = template.shape[:2]
+
+    #     return {
+    #         "found": True,
+    #         "x": x,
+    #         "y": y,
+    #         "center_x": x + width // 2,
+    #         "center_y": y + height // 2,
+    #         "confidence": confidence,
+    #         "width": width,
+    #         "height": height,
+    #     }
+    
+
+    # returns all matches found, if any. Use find_template to get only the first match.
+    def find_all_templates(
+        self,
+        screenshot,
+        template_path,
+        threshold=0.90,
+        overlap_threshold=0.30,
+    ):
+        """
+        Returns ALL matches after Non-Maximum Suppression.
         """
 
-        # screenshot = self.load_image(screenshot)
         template = self.load_image(template_path)
+
+        h, w = template.shape[:2]
 
         result = cv2.matchTemplate(
             screenshot,
@@ -51,85 +99,61 @@ class Vision:
             cv2.TM_CCOEFF_NORMED,
         )
 
-        _, confidence, _, location = cv2.minMaxLoc(result)
+        ys, xs = np.where(result >= threshold)
 
-        self.log(f"Match confidence: {confidence:.3f}")
+        if len(xs) == 0:
+            return []
 
-        if confidence < threshold:
-            return {
-                "found": False
-            }
+        boxes = []
+        scores = []
 
-        x, y = location
+        for x, y in zip(xs, ys):
 
-        height, width = template.shape[:2]
+            boxes.append(
+                [x, y, w, h]
+            )
 
-        return {
-            "found": True,
-            "x": x,
-            "y": y,
-            "center_x": x + width // 2,
-            "center_y": y + height // 2,
-            "confidence": confidence,
-            "width": width,
-            "height": height,
-        }
-    
-    # def find_orb(
-    #     self,
-    #     screenshot,
-    #     reference_path,
-    #     min_matches=20,
-    # ):
-    #     """
-    #     Detect an object using ORB feature matching.
-    #     """
+            scores.append(
+                float(result[y, x])
+            )
 
-    #     reference = self.load_image(reference_path)
+        # ---------------------------------------
+        # Non-Maximum Suppression
+        # ---------------------------------------
 
-    #     orb = cv2.ORB_create(1000)
+        indices = cv2.dnn.NMSBoxes(
+            boxes,
+            scores,
+            score_threshold=threshold,
+            nms_threshold=overlap_threshold,
+        )
 
-    #     kp1, des1 = orb.detectAndCompute(reference, None)
-    #     kp2, des2 = orb.detectAndCompute(screenshot, None)
+        matches = []
 
-    #     self.log(f"Reference keypoints: {len(kp1) if kp1 else 0}")
-    #     self.log(f"Screenshot keypoints: {len(kp2) if kp2 else 0}")
-    #     if des1 is None or des2 is None:
-    #         return {"found": False}
+        if len(indices) == 0:
+            return matches
 
-    #     bf = cv2.BFMatcher(cv2.NORM_HAMMING)
+        for i in indices.flatten():
 
-        # matches = bf.knnMatch(des1, des2, k=2)
+            x, y, w, h = boxes[i]
 
-        # good = []
+            matches.append({
 
-        # for m, n in matches:
-        #     if m.distance < 0.75 * n.distance:
-        #         good.append(m)
+                "found": True,
 
-        # self.log(f"ORB matches: {len(good)}")
+                "x": x,
+                "y": y,
 
-        # if len(good) < min_matches:
-        #     return {"found": False}
+                "center_x": x + w // 2,
+                "center_y": y + h // 2,
 
-        # pts = [kp2[m.trainIdx].pt for m in good]
+                "width": w,
+                "height": h,
 
-        # xs = [p[0] for p in pts]
-        # ys = [p[1] for p in pts]
+                "confidence": scores[i],
 
-        # x1 = int(min(xs))
-        # y1 = int(min(ys))
-        # x2 = int(max(xs))
-        # y2 = int(max(ys))
+            })
 
-        # return {
-        #     "found": True,
-        #     "x": x1,
-        #     "y": y1,
-        #     "width": x2 - x1,
-        #     "height": y2 - y1,
-        #     "center_x": (x1 + x2) // 2,
-        #     "center_y": (y1 + y2) // 2,
-        #     "matches": len(good),
-        # }
-    
+        self.log(f"Matches after NMS: {len(matches)}")
+
+        return matches

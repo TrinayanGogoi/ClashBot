@@ -1,0 +1,94 @@
+[22:33:34] Application started.
+[22:33:36] Starting emulator...
+[22:33:36] Emulator already running (emulator-5554)
+[22:33:36] Waiting for emulator...
+[22:33:36] Connected to emulator-5554
+[22:33:36] Waiting for Android boot...
+[22:33:36] Android boot completed.
+[22:33:36] Connecting to UIAutomator2...
+[22:33:38] UIAutomator2 connected.
+[22:33:38] Launching com.supercell.clashofclans...
+[22:33:38] Resolved activity: com.supercell.clashofclans/com.supercell.titan.GameApp
+[22:33:38] App launched successfully.
+[22:33:38] Bot started successfully.
+[22:33:38] Task completed.
+[22:33:40] Zooming out...
+[22:33:40] Zoom out 1/2
+[22:33:42] Zoom out 2/2
+[22:33:43] Zoom complete.
+[22:33:43] Task completed.
+[22:33:52] Zooming out...
+[22:33:52] Zoom out 1/2
+[22:33:53] Zoom out 2/2
+[22:33:55] Capturing screenshot...
+[22:33:55] Zoom complete.
+[22:33:55] Task completed.
+[22:33:56] Screenshot saved: captures\20260710_223356.png
+[22:33:56] Task completed.
+[22:39:29] Zooming out...
+[22:39:29] Zoom out 1/2
+[22:39:31] Zoom out 2/2
+[22:39:32] Zoom complete.
+[22:39:32] Task completed.
+[22:41:53] Capturing screenshot...
+[22:41:54] Screenshot saved: captures\20260710_224154.png
+[22:41:54] Task completed.
+[22:42:41] Capturing screenshot...
+[22:42:42] Screenshot saved: captures\20260710_224242.png
+[22:42:42] Task completed.
+[22:43:07] Capturing screenshot...
+[22:43:07] Screenshot saved: captures\20260710_224307.png
+[22:43:07] Task completed.
+[22:43:34] Capturing screenshot...
+[22:43:35] Screenshot saved: captures\20260710_224335.png
+[22:43:35] Task completed.
+[22:53:03] Zooming out...
+[22:53:03] Zoom out 1/2
+[22:53:04] Zoom out 2/2
+[22:53:05] Zoom complete.
+[22:53:05] Task completed.
+[22:53:28] Zooming out...
+[22:53:28] Zoom out 1/2
+[22:53:30] Zoom out 2/2
+[22:53:31] Zoom complete.
+[22:53:31] Task completed.
+[22:53:34] Capturing screenshot...
+[22:53:35] Searching 7 templates in templates\Collectors\Gold_Mines...
+[22:53:35] Loaded image: templates\Collectors\Gold_Mines\Gold_Mine14.png
+[22:53:35] Loaded image: templates\Collectors\Gold_Mines\Gold_Mine15.png
+[22:53:35] Loaded image: templates\Collectors\Gold_Mines\Gold_Mine16.png
+[22:53:35] Loaded image: templates\Collectors\Gold_Mines\Gold_Mine5.png
+[22:53:35] Loaded image: templates\Collectors\Gold_Mines\Gold_Mine6.png
+[22:53:35] Loaded image: templates\Collectors\Gold_Mines\Gold_Mine7.png
+[22:53:35] Loaded image: templates\Collectors\Gold_Mines\Gold_Mine8.png
+[22:53:35] Detected 0 object(s).
+[22:53:35] Nothing found.
+[22:53:35] Task completed.
+[22:53:43] Capturing screenshot...
+[22:53:43] Searching 6 templates in templates\Collectors\Elixir_Collectors...
+[22:53:43] Loaded image: templates\Collectors\Elixir_Collectors\Elixir_Collector10.png
+[22:53:43] Loaded image: templates\Collectors\Elixir_Collectors\Elixir_Collector11.png
+[22:53:44] Loaded image: templates\Collectors\Elixir_Collectors\Elixir_Collector13.png
+[22:53:44] Loaded image: templates\Collectors\Elixir_Collectors\Elixir_Collector14.png
+[22:53:44] Matches after NMS: 6
+[22:53:44] Loaded image: templates\Collectors\Elixir_Collectors\Elixir_Collector15.png
+[22:53:44] Matches after NMS: 3
+[22:53:44] Loaded image: templates\Collectors\Elixir_Collectors\Elixir_Collector7.png
+[22:53:44] Detected 9 object(s).
+[22:53:44] {'found': True, 'x': np.int64(530), 'y': np.int64(177), 'center_x': np.int64(544), 'center_y': np.int64(186), 'width': 28, 'height': 18, 'confidence': 0.9259341359138489, 'template': 'Elixir_Collector14.png'}
+[22:53:44] {'found': True, 'x': np.int64(1053), 'y': np.int64(631), 'center_x': np.int64(1067), 'center_y': np.int64(640), 'width': 28, 'height': 18, 'confidence': 0.9052297472953796, 'template': 'Elixir_Collector14.png'}
+[22:53:44] {'found': True, 'x': np.int64(1149), 'y': np.int64(559), 'center_x': np.int64(1163), 'center_y': np.int64(568), 'width': 28, 'height': 18, 'confidence': 0.8924151062965393, 'template': 'Elixir_Collector14.png'}
+[22:53:44] {'found': True, 'x': np.int64(1190), 'y': np.int64(363), 'center_x': np.int64(1204), 'center_y': np.int64(372), 'width': 28, 'height': 18, 'confidence': 0.8684916496276855, 'template': 'Elixir_Collector14.png'}
+[22:53:44] {'found': True, 'x': np.int64(434), 'y': np.int64(352), 'center_x': np.int64(448), 'center_y': np.int64(361), 'width': 28, 'height': 18, 'confidence': 0.8521970510482788, 'template': 'Elixir_Collector14.png'}
+[22:53:44] {'found': True, 'x': np.int64(406), 'y': np.int64(517), 'center_x': np.int64(420), 'center_y': np.int64(526), 'width': 28, 'height': 18, 'confidence': 0.8473141193389893, 'template': 'Elixir_Collector14.png'}
+[22:53:44] {'found': True, 'x': np.int64(1195), 'y': np.int64(361), 'center_x': np.int64(1204), 'center_y': np.int64(369), 'width': 19, 'height': 17, 'confidence': 0.8155001401901245, 'template': 'Elixir_Collector15.png'}
+[22:53:44] {'found': True, 'x': np.int64(1057), 'y': np.int64(629), 'center_x': np.int64(1066), 'center_y': np.int64(637), 'width': 19, 'height': 17, 'confidence': 0.8112837672233582, 'template': 'Elixir_Collector15.png'}
+[22:53:44] {'found': True, 'x': np.int64(1154), 'y': np.int64(557), 'center_x': np.int64(1163), 'center_y': np.int64(565), 'width': 19, 'height': 17, 'confidence': 0.8082135319709778, 'template': 'Elixir_Collector15.png'}
+[22:53:44] Debug image saved: captures/debug_matches.png
+[22:53:44] Task completed.
+[22:53:59] Capturing screenshot...
+[22:54:00] Screenshot saved: captures\20260710_225400.png
+[22:54:00] Task completed.
+[23:14:02] Capturing screenshot...
+[23:14:03] Screenshot saved: captures\20260710_231403.png
+[23:14:03] Task completed.

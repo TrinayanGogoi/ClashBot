@@ -1,13 +1,13 @@
 from COCBot.functions.Vision.detector import Detector
 from pathlib import Path
 
-class DetectGoldMines(Detector):
+class DetectElixirCollectors(Detector):
 
     def run(self, screenshot):
 
         return self.find_templates(
             screenshot,
-            folder="templates\\Collectors\\Gold_Mines",
+            folder="templates\\Collectors\\Elixir_Collectors",
             threshold=0.80,
         )
 

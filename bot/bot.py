@@ -1,4 +1,5 @@
 from COCBot.functions.Vision.detect_attack_button import DetectAttackButton
+from COCBot.functions.Vision.detect_elixir_collector import DetectElixirCollectors
 from COCBot.functions.Vision.detect_gold_mines import DetectGoldMines
 from modules import logger
 from modules.emulator import LDPlayer
@@ -87,6 +88,7 @@ class Bot:
         detectors = {
             "Gold Mines": DetectGoldMines,
             "Attack Button": DetectAttackButton,
+            "Elixir Collectors": DetectElixirCollectors,  # Placeholder for Elixir Collectors detector
             # "Clan Castle": DetectClanCastle,
             # "Town Hall": DetectTownHall,
         }
@@ -114,49 +116,3 @@ class Bot:
             self.log(str(match))
 
         DrawMatches(self.logger).run(image, matches)
-
-    # def test_vision(self, detector):
-    #     image = self.adb.screenshot()
-
-    #     # matches = DetectGoldMines(
-    #     #     self.vision,
-    #     #     self.logger,
-    #     # ).run(image)
-
-    #     matches = detector.run(image)
-        
-    #     self.log(f"Detected {len(matches)} Gold Mines.")
-
-    #     if not matches:
-    #         self.log("No Gold Mines found.")
-    #         return
-
-    #     for match in matches:
-    #         self.log(str(match))
-    #         # self.log("Attack button found. Clicking...")
-    #         # self.adb.tap(
-    #         #     result["center_x"],
-    #         #     result["center_y"],
-    #         # )
-    #     if matches:    
-    #         DrawMatches(self.logger).run(image, matches)
-    #     else:
-    #         self.log("No Gold Mines found.")
-
-
-
-    # def test_gold_mines(self):
-    #     self.test_vision(
-    #         DetectGoldMines(
-    #             self.vision,
-    #             self.logger,
-    #         )
-    #     )
-
-    # def test_attack_button(self):
-    #     self.test_vision(
-    #         DetectAttackButton(
-    #             self.vision,
-    #             self.logger,
-    #         )
-    #     )
